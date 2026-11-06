@@ -5,7 +5,9 @@
 package model;
 
 public class User {
-    private String username, password, role; // role: LECTURER, ADMIN, AUTHORITY
+    private String username;
+    private String password;
+    private String role; // role: LECTURER, ADMIN, AUTHORITY
 
     public User(String username, String password, String role) {
         this.username = username;
@@ -13,7 +15,13 @@ public class User {
         this.role = role;
     }
 
-    public String getUsername() { return username; }
-    public String getRole() { return role; }
-    public boolean checkPassword(String input) { return password.equals(input); }
+    public String getUsername() { 
+        return username; 
+    }
+    public String getRole() { 
+        return role; 
+    }
+    public boolean checkPassword(String input) { 
+        return password.equals(input); 
+    }
 }
