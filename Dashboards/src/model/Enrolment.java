@@ -5,8 +5,7 @@
 package model;
 
 public class Enrolment {
-    private String studentNumber;
-    private String courseCode;
+    private String studentNumber, courseCode;
     private double grade; // -1 means not graded yet
 
     public Enrolment(String studentNumber, String courseCode) {
@@ -15,16 +14,8 @@ public class Enrolment {
         this.grade = -1;
     }
 
-    public String getStudentNumber() { 
-        return studentNumber; 
-    }
-    public String getCourseCode() { 
-        return courseCode; 
-    }
-    public double getGrade() { 
-        return grade; 
-    }
-    public void setGrade(double grade) { 
-        this.grade = grade; 
-    }
+    public String getStudentNumber() { return studentNumber; }
+    public String getCourseCode() { return courseCode; }
+    public double getGrade() { return grade; }
+    public void setGrade(double grade) { this.grade = grade; }
 }
