@@ -5,7 +5,9 @@
 package model;
 
 public class Course {
-    private String code, name, lecturerUsername;
+    private String code;
+    private String name;
+    private String lecturerUsername;
 
     public Course(String code, String name, String lecturerUsername) {
         this.code = code;
@@ -13,7 +15,13 @@ public class Course {
         this.lecturerUsername = lecturerUsername;
     }
 
-    public String getCode() { return code; }
-    public String getName() { return name; }
-    public String getLecturerUsername() { return lecturerUsername; }
+    public String getCode() { 
+        return code; 
+    }
+    public String getName() { 
+        return name; 
+    }
+    public String getLecturerUsername() { 
+        return lecturerUsername; 
+    }
 }
