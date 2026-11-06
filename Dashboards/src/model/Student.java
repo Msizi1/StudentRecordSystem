@@ -5,7 +5,12 @@
 package model;
 
 public class Student {
-    private String studentNumber, firstName, lastName, email, gender, dob;
+    private final String studentNumber;
+    private final String firstName;
+    private final String lastName; 
+    private final String email;
+    private final String gender;
+    private final String dob;
 
     public Student(String studentNumber, String firstName, String lastName,
                    String email, String gender, String dob) {
@@ -17,10 +22,22 @@ public class Student {
         this.dob = dob;
     }
 
-    public String getStudentNumber() { return studentNumber; }
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
-    public String getEmail() { return email; }
-    public String getGender() { return gender; }
-    public String getDob() { return dob; }
+    public String getStudentNumber() { 
+        return studentNumber; 
+    }
+    public String getFirstName() { 
+        return firstName; 
+    }
+    public String getLastName() { 
+        return lastName; 
+    }
+    public String getEmail() { 
+        return email; 
+    }
+    public String getGender() { 
+        return gender; 
+    }
+    public String getDob() { 
+        return dob; 
+    }
 }
