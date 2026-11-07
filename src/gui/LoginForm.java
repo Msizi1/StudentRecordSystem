@@ -250,35 +250,38 @@ private void loadCputBanner() {
     }//GEN-LAST:event_btnLogIn
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // TODO add your handling code here:
-        
+   if (lblImage.getClientProperty("myTimer") == null) {
+
         javax.swing.ImageIcon[] images = {
-    new javax.swing.ImageIcon(getClass().getResource("/image1.jpg")), // Index 0
-    new javax.swing.ImageIcon(getClass().getResource("/image2.jpg")), // Index 1
-    new javax.swing.ImageIcon(getClass().getResource("/image3.jpg"))  // Index 2
-};
+            new javax.swing.ImageIcon(getClass().getResource("/image1.jpg")), 
+            new javax.swing.ImageIcon(getClass().getResource("/image2.jpg")), 
+            new javax.swing.ImageIcon(getClass().getResource("/image3.jpg"))  
+        };
 
-// 2. Set index 0 as the starting image layout
-if (images.length > 0) {
-    lblImage.setIcon(images[0]);
-}
+        if (images.length > 0) {
+            lblImage.setIcon(images[0]);
+        }
 
-// 3. The Timer loops through these array indices every 6 seconds
-javax.swing.Timer imageTimer = new javax.swing.Timer(6000, new java.awt.event.ActionListener() {
-    private int currentIndex = 0; // Starts at index 0
-
-    @Override
-    public void actionPerformed(java.awt.event.ActionEvent e) {
-        // Increment index, then reset to 0 once it passes the last item in the array
-        currentIndex = (currentIndex + 1) % images.length;
+       
+        int[] currentIndex = { 0 }; 
         
-        // Apply the new image based on the calculated index
-        lblImage.setIcon(images[currentIndex]);
-    }
-});
+       
+        lblImage.putClientProperty("myIndex", currentIndex);
 
-// 4. Start the timer execution loop
-imageTimer.start();
+        
+        javax.swing.Timer imageTimer = new javax.swing.Timer(6000, e -> {
+            
+            int[] idx = (int[]) lblImage.getClientProperty("myIndex");
+            
+            idx[0] = (idx[0] + 1) % images.length;
+            lblImage.setIcon(images[idx[0]]);
+        });
+
+        imageTimer.start();
+        
+        
+        lblImage.putClientProperty("myTimer", imageTimer);
+    }
     }//GEN-LAST:event_formWindowActivated
 
     private void UserTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserTypeActionPerformed
